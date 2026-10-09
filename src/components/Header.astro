@@ -1,0 +1,71 @@
+---
+import { toolCategories, toolsByCategory } from '../data/tools';
+import { toolIcons } from '../data/tool-icons';
+---
+
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="logo" href="/" aria-label="CunConvert 首页">
+      <span class="logo-mark" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M4.5 11h15M8 7l-3.5 4L8 15M16 7l3.5 4-3.5 4"/>
+        </svg>
+      </span>
+      <span>CunConvert</span>
+      <span class="logo-tag">本地工具</span>
+    </a>
+    <nav class="nav">
+      <details class="nav-drop">
+        <summary class="nav-drop-btn">全部工具<span class="caret">▾</span></summary>
+        <div class="drop-panel">
+          {toolCategories.map((cat) => (
+            <div class="drop-group">
+              <div class="drop-title">{cat.icon} {cat.label}</div>
+              {toolsByCategory(cat.key).map((t) => (
+                <a href={`/${t.slug}/`}>
+                  <span class="dd-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" set:html={toolIcons[t.slug] ?? ''}></svg>
+                  </span>
+                  <span class="dd-label">{t.name}</span>
+                  <small>{t.short}</small>
+                </a>
+              ))}
+            </div>
+          ))}
+        </div>
+      </details>
+      <a class="nav-link-label" href="/privacy/">隐私</a>
+      <a class="nav-link-label" href="/about/">关于</a>
+      <a class="nav-link-label" href="https://github.com/cunzhangcrypto/cunconvert" target="_blank" rel="noopener">GitHub</a>
+      <button class="theme-toggle" type="button" data-theme-toggle aria-label="切换明暗主题">◐</button>
+    </nav>
+  </div>
+</header>
+
+<style>
+  .nav-drop summary::-webkit-details-marker {
+    display: none;
+  }
+  .nav-drop summary {
+    list-style: none;
+  }
+  .nav-drop .caret {
+    font-size: 10px;
+    color: var(--text-faint);
+    transition: transform 0.15s ease;
+  }
+  .nav-drop[open] .caret {
+    transform: rotate(180deg);
+  }
+</style>
+
+<script is:inline>
+  document.querySelector('[data-theme-toggle]')?.addEventListener('click', function () {
+    var html = document.documentElement;
+    var next = html.dataset.theme === 'dark' ? 'light' : 'dark';
+    html.dataset.theme = next;
+    try {
+      localStorage.setItem('cunconvert-theme', next);
+    } catch (e) {}
+  });
+</script>
