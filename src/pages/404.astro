@@ -1,0 +1,30 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { canonicalUrl } from '../lib/utils/site';
+
+const canonical = canonicalUrl('/404');
+---
+
+<BaseLayout
+  title="页面不存在 - CunConvert"
+  description="你访问的页面不存在，返回 CunConvert 首页继续使用图片工具。"
+  canonical={canonical}
+>
+  <div class="container">
+    <div class="notfound">
+      <a class="logo" href="/" aria-label="CunConvert 首页" style="justify-content:center;margin-bottom:24px">
+        <span class="logo-mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4.5 11h15M8 7l-3.5 4L8 15M16 7l3.5 4-3.5 4"/>
+          </svg>
+        </span>
+        <span>CunConvert</span>
+      </a>
+      <h1>404</h1>
+      <p>你访问的页面不存在或已被移动。</p>
+      <p style="margin-top:20px">
+        <a class="btn-primary" style="display:inline-block;text-decoration:none;color:#fff" href="/">返回首页</a>
+      </p>
+    </div>
+  </div>
+</BaseLayout>
