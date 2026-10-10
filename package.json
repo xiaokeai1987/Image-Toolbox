@@ -1,9 +1,9 @@
 {
-  "name": "cunconvert",
+  "name": "image-toolbox",
   "type": "module",
   "version": "1.0.0",
   "private": true,
-  "description": "CunConvert - 本地图片与 SVG 工具箱（浏览器本地处理，文件不上传服务器）",
+  "description": "image-toolbox - 本地图片与 SVG 工具箱（浏览器本地处理，文件不上传服务器）",
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
