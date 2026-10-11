@@ -3,8 +3,8 @@ import { htmlToMarkdown, guessHtmlTitle } from '../lib/markdown/html-to-md';
 import { toUserMessage } from '../lib/utils/errors';
 import { downloadBlob, sanitizeName } from '../lib/utils/file';
 
-const DRAFT_KEY = 'cunconvert:md-draft';
-const SAMPLE = `# 欢迎使用 CunConvert Markdown 编辑器
+const DRAFT_KEY = 'Image-Toolbox:md-draft';
+const SAMPLE = `# 欢迎使用 Image-Toolbox Markdown 编辑器
 
 左边写，右边**实时预览**。所有解析都在你的浏览器本地完成，草稿会自动保存在本机。
 
