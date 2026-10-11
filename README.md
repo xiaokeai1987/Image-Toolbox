@@ -147,3 +147,18 @@ npx wrangler pages deploy dist --project-name cunconvert
 - 所有图片、SVG、PDF 与 Markdown 内容**只在浏览器本地处理**，项目源码中不存在任何 `fetch` / `XHR` / 上传逻辑。
 - 不使用任何后端、数据库、第三方 AI API 或分析追踪。
 - 生成的图片、PDF、ZIP 等文件仅保存在你自己的设备中；Markdown 草稿保存在本机 localStorage，不会同步到任何服务器。
+
+
+二次开发说明
+本项目基于开源项目：
+
+cunzhangcrypto/cunconvert
+
+感谢原作者：
+
+https://github.com/cunzhangcrypto/cunconvert
+
+原项目演示：
+
+pic.czlab.dev
+
